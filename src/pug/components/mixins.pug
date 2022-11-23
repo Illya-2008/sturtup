@@ -1,0 +1,40 @@
+//- -
+//-     let cards = {
+//-         card1: {
+//-             src: "img/a.png",
+//-             h2: "CLEAN TYPOGRAPHY",
+//-             description: [
+//-                 "Lorem ipsum dolor sit amet, consectetur adipisicing",
+//-                 "elit. Minima maxime quam architecto quo inventore",
+//-                 "harum ex magni, dicta impedit. Lorem ipsum.",
+//-             ],
+//-         },
+//-         card2: {
+//-             src: "img/slash.png",
+//-             h2: "ROCK SOLID CODE",
+//-             description: [
+//-                 "Lorem ipsum dolor sit amet, consectetur adipisicing",
+//-                 "elit. Minima maxime quam architecto quo inventore",
+//-                 "harum ex magni, dicta impedit. Lorem ipsum.",
+//-             ],
+//-         },
+//-         card3: {
+//-             src: "img/circle.png",
+//-             h2: "EXPERT SUPPORT",
+//-             description: [
+//-                 "Lorem ipsum dolor sit amet, consectetur adipisicing",
+//-                 "elit. Minima maxime quam architecto quo inventore",
+//-                 "harum ex magni, dicta impedit. Lorem ipsum.",
+//-             ],
+//-         },
+//-     }
+
+//- mixin oneCard (item)
+//-     figure.card
+//-         figcaption 
+//-             .cardimg
+//-                 .images
+//-                     a(href="javascript:void(0)") 
+//-                         img(src=item.src).card-img
+//-                 h2.card-h2= item.h2 
+//-                 p.card-desc= item.description

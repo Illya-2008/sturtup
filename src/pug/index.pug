@@ -1,9 +1,244 @@
+include components/mixins
+
 doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Hello
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;700&family=PT+Sans&family=Roboto&display=swap" rel="stylesheet">
+        link(rel="stylesheet", href="css/style.css")
+        title startup
     body 
-        p Hello
+        .wrapper.header-backround.header
+            .wrapper
+                p.logo Startup
+                nav.header-menu
+                    li 
+                        a(href="#") Home
+                    li 
+                        a(href="#") Services 
+                    li 
+                        a(href="#") About 
+                    li 
+                        a(href="#") Works 
+                    li 
+                        a(href="#") Blog 
+                    li 
+                        a(href="#") Clients 
+                    li 
+                        a(href="#") Contacts 
+                h1.header-h1 WELCOME TO STARTUP
+                p.header-text Your Favourite Creative Agency Template
+                .a-block
+                    a(href="javascript:void(0)" onclick="popupVisible(); dragAndDrop()").header-link GET STARTED
+                .popup 
+                    a(href="javascript:void(0)" onclick="popupHidden()").cross +
+                    .red-block(draggable="true" data-color="red")
+                    .red-finish.js-cell.redEl(data-color="red")
+                    .green-block.greenEl(draggable="true" data-color="green")
+                    .green-finish.js-cell.greenEl(data-color="green")
+                    .blue-block.blueEl(draggable="true" data-color="blue")
+                    .blue-finish.js-cell.blueEl(data-color="blue")
+                    .yellow-block.yellowEl(draggable="true" data-color="yellow")
+                    .yellow-finish.js-cell.yellowEl(data-color="yellow")
+                    a(href="#" onclick="audit()").sing Sing in
+        .wrapper 
+            main.main
+                h1.main-h1 SERVICES 
+                p.main-text We offer ipsum dolor sit amet, consetetur sadipscing elitr amet
+                .main-cards-block.anim-items
+                    .card1 
+                        figure 
+                            a(href="javascript:void(0)").a
+                            figcaption 
+                                h2.card-h2 CLEAN TYPOGRAPHY
+                                p.card-desc Lorem ipsum dolor sit amet, consectetur adipisicing
+                                p.card-desc elit. Minima maxime quam architecto quo inventore
+                                p.card-desc harum ex magni, dicta impedit. Lorem ipsum.
+                    .card2
+                        figure 
+                            a(href="javascript:void(0)" onclick="tripleClick(event)").slash.triple-click
+                            figcaption 
+                                h2.card-h2 CLEAN TYPOGRAPHY
+                                p.card-desc Lorem ipsum dolor sit amet, consectetur adipisicing
+                                p.card-desc elit. Minima maxime quam architecto quo inventore
+                                p.card-desc harum ex magni, dicta impedit. Lorem ipsum.
+                    .card3 
+                        figure 
+                            a(href="javascript:void(0)").circle 
+                            figcaption 
+                                h2.card-h2 CLEAN TYPOGRAPHY
+                                p.card-desc Lorem ipsum dolor sit amet, consectetur adipisicing
+                                p.card-desc elit. Minima maxime quam architecto quo inventore
+                                p.card-desc harum ex magni, dicta impedit. Lorem ipsum.
+                h1.people-h1 ABOUT US
+                p.main-text Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+                .main-left-text-block 
+                    p.main-desc Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod
+                    p.main-desc tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et
+                    p.main-desc accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                    p.main-desc sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat.
+                    p.main-desc Lorem ipsum dolor sit amet. Lorem ipsum eat.
+                .main-right-text-block
+                    p.main-desc Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor
+                    p.main-desc invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam
+                    p.main-desc et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                    p.main-desc Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum
+                    p.main-desc dolor sit amet. Lorem ipsum dolor et.
+                .people 
+                    .slider
+                        figure.man-figure.active
+                            img(src="img/first-man.png", alt="man")
+                            figcaption 
+                                h3.people-h3 Md. Khalil Uddin
+                                p.people-text Head of Ideas
+                        figere.man-figure
+                            img(src="img/second-man.png", alt="man")
+                            figcaption 
+                                h3.people-h3 Rubel Miah
+                                p.people-text Lead WordPress Developer
+                        figere.man-figure
+                            img(src="img/third-man.png", alt="man")
+                            figcaption 
+                                h3.people-h3 Shamim Mia
+                                p.people-text Sr. Web Developer
+                        figere.man-figure
+                            img(src="img/fourth-man.png", alt="man")
+                            figcaption 
+                                h3.people-h3 John Doe
+                                p.people-text Front-end Developer
+                        a(href="javascript:void(0)").left-arrow-block
+                            img(src="img/left-arrow.png", alt="arrow").left-arrow
+                        a(href="javascript:void(0)").right-arrow-block
+                            img(src="img/right-arrow.png", alt="arrow").right-arrow
+                    .dots 
+                        span.dot.dot-active
+                        span.dot 
+                        span.dot 
+                        span.dot 
+                .works 
+                    h1.works-h1 LATEST WORKS
+                    form(action="php/server.php").form1 
+                        input(type="radio", name="radio" id="radio1" onclick="all()").radio
+                        label(for="radio1") All
+                        input(type="radio", name="radio" id="radio2" onclick="branding()").radio
+                        label(for="radio2") Branding
+                        input(type="radio", name="radio" id="radio3" onclick="design()").radio
+                        label(for="radio3") Design
+                        input(type="radio", name="radio" id="radio4" onclick="dev()").radio
+                        label(for="radio4") Development
+                        input(type="radio", name="radio" id="radio5" onclick="strategy()").radio
+                        label(for="radio5") Strategy
+                    .pictures
+                        a(href="#").girl
+                            img(src="img/girl.png", alt="girl").picture
+                        a(href="#").bird
+                            img(src="img/bird.png", alt="bird").picture
+                        a(href="#").notebook
+                            img(src="img/notebook.png", alt="notebook").picture 
+                        a(href="#").camera
+                            img(src="img/camera.png", alt="camera").picture 
+                        a(href="#").bicycle
+                            img(src="img/bicycle.png", alt="bicycle").picture
+                        a(href="#").copybook
+                            img(src="img/copybook.png", alt="copybook").picture
+                        a(href="#").work
+                            img(src="img/work.png", alt="work").picture
+                        a(href="#").school
+                            img(src="img/school.png", alt="school").picture
+                        a(href="#").calendar
+                            img(src="img/calendar.png", alt="calendar").picture
+        .main-backround     
+            .wrapper
+                h1.middle-h1 Do you like OUR WORK so far?
+                h1.middle-h1.margin Let's talk about YOUR PROJECT!
+                a(href="getintouch").get-in-touch GET IN TOUCH 
+        .wrapper
+            h1.main-h1 RECENT BLOG POSTS
+            p.main-text Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            .startup-block 
+                .page
+                    img(src="../img/startup.png", alt="startup")
+                .desc
+                    .date
+                        p.date-text 18
+                        p.date-text OCT
+                    .h
+                        h2.blog-h2 STARTUP IDEAS NEEDS TO BE FUNDED 
+                        p.mini-desc By Khalil Uddin in Development  
+                    p.main-desc Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore
+                    p.main-desc et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                    p.main-desc erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem
+                    p.main-desc ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore
+                    p.main-desc et dolore aliquyam erat, sed diam 
+                    a(href="javascript:void(0)" onclick="visibleText()").more READ MORE
+                .text-popup
+                    a(href="javascript:void(0)" onclick="hiddenText()").text-cross +
+                    p.main-desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique modi corporis, odio totam quos autem cupiditate dolor nemo facere eligendi explicabo nisi quaerat sit tempora corrupti assumenda commodi rem beatae necessitatibus aliquam, praesentium nam veritatis molestiae delectus? Exercitationem nihil et nemo pariatur omnis totam tempore praesentium, eos voluptatum debitis sunt reprehenderit doloremque, voluptatibus, similique adipisci impedit repudiandae quaerat? Mollitia quaerat facilis est magnam similique molestias ad voluptatum quo? Ut ea illum veritatis sit est perferendis minus eius. Autem ex explicabo fuga. Voluptates fugit nesciunt aspernatur atque. Facilis, iste nam neque accusamus corporis doloribus totam similique impedit tenetur veniam, harum culpa? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam pariatur quas, esse sit exercitationem sed reprehenderit rem quisquam? Illo magni sint aliquam delectus itaque. Quas est unde, praesentium suscipit consequuntur consectetur impedit quos reiciendis quia veniam magnam doloremque fuga tenetur ducimus iure nemo necessitatibus ex quasi natus! Ullam, veniam asperiores!
+            .line
+            .interface-block 
+                .page 
+                    img(src="../img/interface.png", alt="interface")
+                .desc
+                    .date
+                        p.date-text 18
+                        p.date-text OCT
+                    .h
+                        h2.blog-h2 STARTUP IDEAS NEEDS TO BE FUNDED 
+                        p.mini-desc By Khalil Uddin in Development  
+                    p.main-desc Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore
+                    p.main-desc et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                    p.main-desc erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem
+                    p.main-desc ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore
+                    p.main-desc et dolore aliquyam erat, sed diam
+                    a(href="javascript:void(0)" onclick="visibleText2()").more READ MORE
+                .text-popup2
+                    a(href="javascript:void(0)" onclick="hiddenText2()").text-cross2 +
+                    p.main-desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique modi corporis, odio totam quos autem cupiditate dolor nemo facere eligendi explicabo nisi quaerat sit tempora corrupti assumenda commodi rem beatae necessitatibus aliquam, praesentium nam veritatis molestiae delectus? Exercitationem nihil et nemo pariatur omnis totam tempore praesentium, eos voluptatum debitis sunt reprehenderit doloremque, voluptatibus, similique adipisci impedit repudiandae quaerat? Mollitia quaerat facilis est magnam similique molestias ad voluptatum quo? Ut ea illum veritatis sit est perferendis minus eius. Autem ex explicabo fuga. Voluptates fugit nesciunt aspernatur atque. Facilis, iste nam neque accusamus corporis doloribus totam similique impedit tenetur veniam, harum culpa? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam pariatur quas, esse sit exercitationem sed reprehenderit rem quisquam? Illo magni sint aliquam delectus itaque. Quas est unde, praesentium suscipit consequuntur consectetur impedit quos reiciendis quia veniam magnam doloremque fuga tenetur ducimus iure nemo necessitatibus ex quasi natus! Ullam, veniam asperiores!
+            .brands 
+                img(src="../img/first-brand.png", alt="brand")
+                img(src="../img/second-brand.png", alt="brand")
+                img(src="../img/third-brand.png", alt="brand")
+                img(src="../img/fourth-brand.png", alt="brand")
+                img(src="../img/fiveth-brand.png", alt="brand")
+            .quotes
+                p.main-desc Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                p.main-desc.margin Temporibus autem quibusdam et aut officiis debitis aut rerum” 
+                p.main-desc John Doe, Google Inc.
+            h1.main-h1 GET IN TOUCH
+            p.main-text Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            .get-in-touch-block
+                .info
+                    .address-block 
+                        h5.address ADDRESS
+                        p.reg-desc 312, 7th Ave, New York
+                        p.reg-desc NY 101200, United States of America
+                    .hothile-block 
+                        h5.hotline HOTLINE (24x7)
+                        p.reg-desc +65 0052 300, +65 88251 210 
+                        p.reg-desc +88 01723 511 340
+                    .email-block 
+                        h5.email E-MAIL
+                        p.reg-desc shapedtheme@gmail.com
+                        p.reg-desc khalilkode@gmail.com
+                .form(id="getintouch")
+                    form(action="javascript:void(0)") 
+                        input(type="text" placeholder="YOUR NAME").mr
+                        input(type="text" placeholder="YOUR E-MAIL")
+                        input(type="text" placeholder="YOUR SUBJECT").mr
+                        input(type="text" placeholder="COMPANY NAME")
+                        textarea(name="text" value="WHRITE YOUR MESSAGE" cols="30", rows="9").textarea 
+                        input(type="submit" value="SEND MESSAGE").mr.submit
+                        p.form-text * We’ll contact you as as possible. We don’t reply on Monday.
+        .footer-backround
+            .icons 
+                img(src="../img/ico.png", alt="ico").ico
+                img(src="../img/ico.png", alt="ico").ico
+                img(src="../img/ico.png", alt="ico").ico
+                img(src="../img/ico.png", alt="ico").ico
+            p.c © 2015 Startup, Designed by ShapedTheme
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+        script(src="js/scripts.js")
